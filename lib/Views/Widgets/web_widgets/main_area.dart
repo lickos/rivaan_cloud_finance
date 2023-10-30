@@ -1,3 +1,4 @@
+import 'package:cloudfinance/Views/Widgets/web_widgets/chart_area.dart';
 import 'package:cloudfinance/Views/Widgets/web_widgets/header.dart';
 import 'package:cloudfinance/Views/Widgets/web_widgets/menu_item.dart';
 import 'package:cloudfinance/Views/Widgets/web_widgets/overview_container.dart';
@@ -132,50 +133,62 @@ class MainArea extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                    padding: EdgeInsets.symmetric(
-                      vertical: 20,
-                      horizontal: 20,
-                    ),
-                    child: Row(
-                      children: [
-                        OverviewContainer(
-                          iconName: Icons.monetization_on,
-                          title: 'Earnings',
-                          amount: 928.41,
-                          symbolName: Icons.arrow_upward,
-                          symbolColor: Colors.green,
-                          symbolPercentance: 12.8,
-                          symbolDif: 118.8,
-                        ),
-                        OverviewContainer(
-                          iconName: Icons.shopping_cart,
-                          title: 'Spendings',
-                          amount: 169.43,
-                          symbolName: Icons.arrow_downward,
-                          symbolColor: Colors.red,
-                          symbolPercentance: 3.1,
-                          symbolDif: 5.2,
-                        ),
-                        OverviewContainer(
-                          iconName: Icons.savings,
-                          title: 'Savings',
-                          amount: 406.27,
-                          symbolName: Icons.arrow_upward,
-                          symbolColor: Colors.green,
-                          symbolPercentance: 8.2,
-                          symbolDif: 33.3,
-                        ),
-                        OverviewContainer(
-                          iconName: Icons.chat_rounded,
-                          title: 'Investment',
-                          amount: 1854.08,
-                          symbolName: Icons.arrow_upward,
-                          symbolColor: Colors.green,
-                          symbolPercentance: 9.2,
-                          symbolDif: 78.5,
-                        ),
-                      ],
-                    )),
+                  padding: EdgeInsets.symmetric(
+                    vertical: 20,
+                    horizontal: 20,
+                  ),
+                  child: Row(
+                    children: [
+                      OverviewContainer(
+                        iconName: Icons.monetization_on,
+                        title: 'Earnings',
+                        amount: 928.41,
+                        symbolName: Icons.arrow_upward,
+                        symbolColor: Colors.green,
+                        symbolPercentance: 12.8,
+                        symbolDif: 118.8,
+                      ),
+                      OverviewContainer(
+                        iconName: Icons.shopping_cart,
+                        title: 'Spendings',
+                        amount: 169.43,
+                        symbolName: Icons.arrow_downward,
+                        symbolColor: Colors.red,
+                        symbolPercentance: 3.1,
+                        symbolDif: 5.2,
+                      ),
+                      OverviewContainer(
+                        iconName: Icons.savings,
+                        title: 'Savings',
+                        amount: 406.27,
+                        symbolName: Icons.arrow_upward,
+                        symbolColor: Colors.green,
+                        symbolPercentance: 8.2,
+                        symbolDif: 33.3,
+                      ),
+                      OverviewContainer(
+                        iconName: Icons.chat_rounded,
+                        title: 'Investment',
+                        amount: 1854.08,
+                        symbolName: Icons.arrow_upward,
+                        symbolColor: Colors.green,
+                        symbolPercentance: 9.2,
+                        symbolDif: 78.5,
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 20.0,
+                    horizontal: 20.0,
+                  ),
+                  child: Row(
+                    children: [
+                      ChartArea(),
+                    ],
+                  ),
+                ),
               ]),
             ),
           ),
