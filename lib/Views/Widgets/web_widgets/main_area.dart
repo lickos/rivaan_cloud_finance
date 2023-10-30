@@ -1,7 +1,9 @@
 import 'package:cloudfinance/Views/Widgets/web_widgets/chart_area.dart';
 import 'package:cloudfinance/Views/Widgets/web_widgets/header.dart';
+import 'package:cloudfinance/Views/Widgets/web_widgets/latest_transactions_container.dart';
 import 'package:cloudfinance/Views/Widgets/web_widgets/menu_item.dart';
 import 'package:cloudfinance/Views/Widgets/web_widgets/overview_container.dart';
+import 'package:cloudfinance/Views/Widgets/web_widgets/total_savings.dart';
 import 'package:cloudfinance/utils/constants/colors.dart';
 import 'package:cloudfinance/utils/constants/constant_widgets.dart';
 import 'package:flutter/material.dart';
@@ -119,77 +121,88 @@ class MainArea extends StatelessWidget {
             flex: 5,
             child: SizedBox(
               height: size.height,
-              child: const Column(children: [
-                Header(),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                    child: Text(
-                      'Overview',
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              child: const SingleChildScrollView(
+                child: Column(children: [
+                  Header(),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                      child: Text(
+                        'Overview',
+                        style: TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 20,
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 20,
+                      horizontal: 20,
+                    ),
+                    child: Row(
+                      children: [
+                        OverviewContainer(
+                          iconName: Icons.monetization_on,
+                          title: 'Earnings',
+                          amount: 928.41,
+                          symbolName: Icons.arrow_upward,
+                          symbolColor: Colors.green,
+                          symbolPercentance: 12.8,
+                          symbolDif: 118.8,
+                        ),
+                        OverviewContainer(
+                          iconName: Icons.shopping_cart,
+                          title: 'Spendings',
+                          amount: 169.43,
+                          symbolName: Icons.arrow_downward,
+                          symbolColor: Colors.red,
+                          symbolPercentance: 3.1,
+                          symbolDif: 5.2,
+                        ),
+                        OverviewContainer(
+                          iconName: Icons.savings,
+                          title: 'Savings',
+                          amount: 406.27,
+                          symbolName: Icons.arrow_upward,
+                          symbolColor: Colors.green,
+                          symbolPercentance: 8.2,
+                          symbolDif: 33.3,
+                        ),
+                        OverviewContainer(
+                          iconName: Icons.chat_rounded,
+                          title: 'Investment',
+                          amount: 1854.08,
+                          symbolName: Icons.arrow_upward,
+                          symbolColor: Colors.green,
+                          symbolPercentance: 9.2,
+                          symbolDif: 78.5,
+                        ),
+                      ],
+                    ),
                   ),
-                  child: Row(
-                    children: [
-                      OverviewContainer(
-                        iconName: Icons.monetization_on,
-                        title: 'Earnings',
-                        amount: 928.41,
-                        symbolName: Icons.arrow_upward,
-                        symbolColor: Colors.green,
-                        symbolPercentance: 12.8,
-                        symbolDif: 118.8,
-                      ),
-                      OverviewContainer(
-                        iconName: Icons.shopping_cart,
-                        title: 'Spendings',
-                        amount: 169.43,
-                        symbolName: Icons.arrow_downward,
-                        symbolColor: Colors.red,
-                        symbolPercentance: 3.1,
-                        symbolDif: 5.2,
-                      ),
-                      OverviewContainer(
-                        iconName: Icons.savings,
-                        title: 'Savings',
-                        amount: 406.27,
-                        symbolName: Icons.arrow_upward,
-                        symbolColor: Colors.green,
-                        symbolPercentance: 8.2,
-                        symbolDif: 33.3,
-                      ),
-                      OverviewContainer(
-                        iconName: Icons.chat_rounded,
-                        title: 'Investment',
-                        amount: 1854.08,
-                        symbolName: Icons.arrow_upward,
-                        symbolColor: Colors.green,
-                        symbolPercentance: 9.2,
-                        symbolDif: 78.5,
-                      ),
-                    ],
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 20.0,
+                      horizontal: 20.0,
+                    ),
+                    child: Row(
+                      children: [
+                        ChartArea(),
+                        TotalSavings(),
+                      ],
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 20.0,
-                    horizontal: 20.0,
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 20.0,
+                      horizontal: 20.0,
+                    ),
+                    child: LatestTransactionsContainer(),
                   ),
-                  child: Row(
-                    children: [
-                      ChartArea(),
-                    ],
-                  ),
-                ),
-              ]),
+                ]),
+              ),
             ),
           ),
         ],

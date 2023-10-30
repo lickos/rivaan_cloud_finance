@@ -29,7 +29,6 @@ class OverviewContainer extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(20.0),
         width: size.width * 0.18,
-        height: size.height * 0.12,
         alignment: Alignment.centerLeft,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
